@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Bookings</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav>
+                        <ul>
+                            <li><a href="#">SpaBookings</a></li>
+                            <li><a href="#">Sign In</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="#">Log Out</a></li>
+                            <li><a href="#">Book Your Treatment</a></li>
+                            <li><a href="#">Your Treatments</a></li>
+                            <li><a href="#">Update or Cancel Your Booking</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        {}
+        {}
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Website by Marina</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
