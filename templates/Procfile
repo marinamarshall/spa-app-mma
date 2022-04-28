@@ -1,0 +1,1 @@
+web: gunicorn spa_app_mma.wsgi
