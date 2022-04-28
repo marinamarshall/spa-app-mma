@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Treatment
+from .forms import BookingForm
 
 
 class TreatmentList(generic.ListView):
@@ -9,16 +10,47 @@ class TreatmentList(generic.ListView):
     queryset = Treatment.objects.all()
     template_name = 'index.html'
 
+
 class TreatmentDetail(View):
     """ TreatmentDetail """
     def get(self, request, slug, *args, **kwargs):
+        """ get """
         queryset = Treatment.objects.all()
         treatment = get_object_or_404(queryset, slug=slug)
 
         return render(
-            request, 
+            request,
             'treatment_detail.html',
             {
-                "treatment":treatment
+                "treatment": treatment,
+                "booking_form": BookingForm(),
+                "booked": False
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        """ post """
+        queryset = Treatment.objects.all()
+        treatment = get_object_or_404(queryset, slug=slug)
+
+        booking_form = BookingForm(data=request.POST)
+
+        if booking_form.is_valid():
+            booking_form.instance.treatment = request.client.treatment
+            booking_form.instance.date_of_treatment = request.client.date_of_treatment
+            booking_form.instance.time_of_treatment = request.client.time_of_treatment
+            booking = booking_form.save(commit=False)
+            booking.post = booking
+            booking.save()
+        else:
+            booking_form = BookingForm()
+
+        return render(
+            request,
+            'treatment_detail.html',
+            {
+                "treatment": treatment,
+                "booking_form": BookingForm(),
+                "booked": True
             },
         )
