@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Treatment
+from .models import Treatment, Booking
 from .forms import BookingForm
 
 
@@ -54,3 +54,15 @@ class TreatmentDetail(View):
                 "booked": True
             },
         )
+
+class FormForBooking(generic.ListView):
+    """ FormForBooking """
+    model = Booking
+    queryset = Booking.objects.all()
+    template_name = 'book_treatment.html'
+
+class BookingList(generic.ListView):
+    """ BookingList """
+    model = Booking
+    queryset = Booking.objects.all()
+    template_name = 'view_bookings.html'
