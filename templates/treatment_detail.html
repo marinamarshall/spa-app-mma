@@ -9,9 +9,9 @@
         </div>
         <div class="col">
             {% if "placeholder" in post.featured_image.url %}
-            <img src="#" alt="">
+            <img src="#" alt="Spa Treatment Image">
             {% else %}
-            <img src=" {{ post.featured_image.url }}">
+            <img src=" {{ treatment.featured_image.url }}">
             {% endif %}
         </div>
     </div>
@@ -25,24 +25,6 @@
                 </p>
             </div>
         </div>
-    </div>
-</div>
-<div class="col-md-4 card mb-4  mt-3 ">
-    <div class="card-body">
-        
-        {% if user.is_authenticated %}
-        <h3>Book an Appointment</h3>
-        <form method="POST" style="margin-top: 1.3em;">
-            {{ booking_form }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% else %}
-        <h3>
-            Log in to book an appointment
-        </h3>
-        {% endif %}
-
     </div>
 </div>
 {% endblock %}

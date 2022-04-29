@@ -9,7 +9,7 @@ STATUS = ((0, "Pending"), (1, "Booked"))
 # Treatment Model
 class Treatment(models.Model):
     """ TreatmentModel """
-    image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image', default='placeholder')
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     category = models.IntegerField(choices=CATEGORIES)
