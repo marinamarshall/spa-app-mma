@@ -30,8 +30,20 @@ SURFACE - COLOURS, FONTS/TYPOGRAPHY>
 <TECHNOLOGIES USED - LANGUAGES, FRAMEWORKS, LIBRARIES, PROGRAMS>
 
 <FEATURES>
+1. Home Page - Features treatments available at a glance
+2. Treatment Detail Page - Displays in-depth information abaout the treatment selected
+3. Sign Up Page
+4. Log In Page
+5. Book Treatment Page
+6. View Bookings Page
+7. Update and Delete Bookings Page
+8. Logout Page
 
 <TESTING + SCREENSHOTS OF VALIDATION>
+1. HTML - 
+2. CSS
+3. JavaScript
+4. Python
 
 <BUGS>
 
