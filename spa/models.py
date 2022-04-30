@@ -40,7 +40,6 @@ class Booking(models.Model):
     treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
     date_of_treatment = models.DateField()
     time_of_treatment = models.TimeField()
-    # length_of_treatment = models.DurationField()
     status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
