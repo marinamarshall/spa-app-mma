@@ -5,7 +5,7 @@ from . import forms
 
 urlpatterns = [
     path('', views.TreatmentList.as_view(), name='home'),
-    path('formforbooking/', views.FormForBooking.as_view(), name="form_for_booking"),
+    path('bookingview/', views.BookingView.as_view(), name="booking_view"),
     path('bookinglist/', views.BookingList.as_view(), name="booking_list"),
 
     # a slug path need to be last

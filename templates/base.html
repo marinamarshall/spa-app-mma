@@ -27,7 +27,7 @@
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'form_for_booking' %}">Book Your Treatment</a>
+                        <a class="nav-link" href="{% url 'booking_view' %}">Book Your Treatment</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'booking_list' %}">Your Treatments</a>

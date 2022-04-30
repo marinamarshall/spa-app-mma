@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
 from .models import Treatment, Booking
 from .forms import BookingForm
 
@@ -57,19 +59,24 @@ class TreatmentDetail(View):
 
 
 # add post method? generic View
-class FormForBooking(View):
-    """ FormForBooking """
-    model = Booking
-    queryset = Booking.objects.all()
+class BookingView(CreateView):
+    """ BookingView """
+    # model = Booking
     template_name = 'book_treatment.html'
+    form_class = BookingForm
+    queryset = Booking.objects.all()
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+    # if form.is_valid return render(request, 'view_bookings.html')
 
 
 # add get method? generic View
 class BookingList(generic.ListView):
     """ BookingList """
-    model = Booking
-    queryset = Booking.objects.all()
     template_name = 'view_bookings.html'
+    queryset = Booking.objects.all()
+    model = Booking
+    
+
