@@ -69,4 +69,40 @@ SURFACE - COLOURS, FONTS/TYPOGRAPHY>
 
 <CREDITS - ACKNOWLEDGEMENTS, CONTENT, MEDIA>
 
-<DEPLOYMENT>
+## DEPLOYMENT
+
+### Fork and Clone Your Repository
+
+* On GitHub, go to the selected repositories main page
+* In the top-right corner, click the Fork button
+* Go to your fork of the repository
+* Click  the green download code button
+* Clone the repository using HTTPS, under "Clone with HTTPS", then click .
+* Or, To clone the repository using an SSH key, click Use SSH, then click .
+* Or, To clone a repository using GitHub CLI, click Use GitHub CLI, then click .
+* Open the Terminal
+* Change the current working directory to the location where you want the cloned directory
+* Type git clone
+* Then paste the URL you copied earlier
+* Press Enter
+* You now have a local clone
+
+### Remote Deployment
+
+* On GitHub, go to your chosen repository
+* At the top of the repository on the right hand side, click the settings tab
+* Scroll down to the "Github Pages" section
+* Go to the branch drop-down menu and select a publishing source
+* Change the source branch to "master"
+* Click Save
+* Refresh the page.
+* Copy the live website link provided
+
+### Local Deployment
+
+* Go to Gitpod
+* Select the repository to be used and click open
+* In the terminal, type python3 -m http.server
+* Click Open Browser
+
+### Heroku Deployment
