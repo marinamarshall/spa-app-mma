@@ -27,7 +27,23 @@ STRUCTURE,
 SKELETON - WIREFRAMES, 
 SURFACE - COLOURS, FONTS/TYPOGRAPHY>
 
-<TECHNOLOGIES USED - LANGUAGES, FRAMEWORKS, LIBRARIES, PROGRAMS>
+## Technologies Used
+### Languages
+* HTML5
+* CSS3
+* JavaScript
+* Python
+
+### Frameworks, Libraries and Programs Used
+* Django
+* Bootstrap
+* Google Developer Tools - Used during the coding process to identify errors in CSS and in JavaScript files
+* Font Awesome - Social media icons used for Facebook, Instagram and Pinterest
+* Favicon - 
+* Github - Used to store the project code after being pushed from Git
+* Git - Used for version control
+* Gitpod - Used to edit code and using the terminal to add and commit code with key messages that were pushed to Github
+
 
 <FEATURES>
 1. Home Page - Features treatments available at a glance

@@ -59,6 +59,7 @@ class TreatmentDetail(View):
         )
 
 
+# Book Your Treatment - form
 # add post method? generic View
 class BookingView(CreateView):
     """ BookingView """
@@ -67,12 +68,15 @@ class BookingView(CreateView):
     # model = Booking
     # queryset = Booking.objects.all()
 
+    # Maybe make this a post method as it is to submit a request for a booking
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
     # if form.is_valid return render(request, 'view_bookings.html')
+    # else booking_form = BookingForm()
 
 
+# Your Treatments - View List
 # add get method? generic View
 class BookingList(ListView):
     """ BookingList """
