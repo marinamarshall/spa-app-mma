@@ -55,12 +55,19 @@ class TreatmentDetail(View):
             },
         )
 
-class FormForBooking(generic.ListView):
+
+# add post method? generic View
+class FormForBooking(View):
     """ FormForBooking """
     model = Booking
     queryset = Booking.objects.all()
     template_name = 'book_treatment.html'
 
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+# add get method? generic View
 class BookingList(generic.ListView):
     """ BookingList """
     model = Booking
