@@ -25,16 +25,7 @@
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Create Account <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
-                    </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'form_for_booking' %}">Book Your Treatment</a>
                     </li>
@@ -43,6 +34,16 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Update or Cancel Your Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Create Account <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
                     </li>
                     {% endif %}
                 </ul>
