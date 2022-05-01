@@ -5,22 +5,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="treatment-title">{{ treatment.title }}</h1>
-        </div>
-        <div class="col">
-            {% if "placeholder" in treatment.featured_image.url %}
-            <img src="https://www.pexels.com/photo/selective-focus-photography-of-candles-1123256/" alt="Spa Treatment Image" width="50%">
-            {% else %}
-            <img src=" {{ treatment.featured_image.url }}" width="50%">
-            {% endif %}
+            <h2 class="treatment-title">{{ treatment.title }}</h2>
         </div>
     </div>
-</div>
-<div class="container">
     <div class="row">
-        <div class="col">
-            <div class="card-body">
-                <p class="card-text ">
+        <div class="col d-flex justify-content-center">
+            <div class="tx-body">
+                <p class="tx-text ">
                     {{ treatment.description | safe }}
                 </p>
             </div>
