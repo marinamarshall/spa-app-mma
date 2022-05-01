@@ -8,6 +8,10 @@ h3 {
     margin-top: 5%;
 }
 
+h5 {
+    text-decoration: underline;
+}
+
 footer {
     position: sticky;
 }
@@ -21,13 +25,17 @@ ul {
     text-decoration: none;
 }
 
+li {
+    list-style-type: none;
+}
+
 .welcome {
     background-color: #C9CCD5;
 }
 
 .navbar-brand {
     font-size: xx-large;
-    color: black;
+    color: #e86ac6;
     padding: 1rem;
     margin-left: 0.2rem;
 }
@@ -43,6 +51,16 @@ ul {
 /* .navbar-toggler-icon {
     color: black;
 } */
+.author {
+    color: #e86ac6;
+}
+
+.socials {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    color: black;
+}
 
 .card {
     padding: 2%;
@@ -58,7 +76,7 @@ ul {
     padding-left: 30%;
 }
 
-.card-body > a:hover, .navbar-brand:hover, .nav-link:hover {
+.card-body > a:hover, .navbar-brand:hover, .nav-link:hover, .socials:hover {
     color: #5D6D5B;
 }
 

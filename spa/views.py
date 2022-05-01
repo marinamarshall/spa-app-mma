@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-# from django.views.generic.edit import CreateView
 from .models import Treatment, Booking
 from .forms import BookingForm
 
@@ -10,7 +9,7 @@ from .forms import BookingForm
 class TreatmentList(generic.ListView):
     """ TreatmentList """
     model = Treatment
-    queryset = Treatment.objects.all()
+    queryset = Treatment.objects.all().order_by('category')
     template_name = 'index.html'
 
 
