@@ -36,7 +36,7 @@ class Client(models.Model):
 # Booking Model
 class Booking(models.Model):
     """ BookingModel """
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
     treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
     date_of_treatment = models.DateField()
     time_of_treatment = models.TimeField()

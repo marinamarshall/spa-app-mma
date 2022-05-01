@@ -4,7 +4,7 @@
     <div class="col-md-6 card mb-4  mt-3 offset-3">
         <div class="card-body">
             {% if user.is_authenticated %}
-            <form action="#" method="POST" style="margin-top: 1.3em;">
+            <form action="{% url 'booking_view' %}" method="POST" style="margin-top: 1.3em;">
                 {% csrf_token %}
                 {{ form.as_p }}
                 
