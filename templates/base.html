@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        <header>
+        <header class="container-fluid welcome">
             <!-- Bootstrap Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand active" href="{% url 'home' %}">SpaBookings</a>
+            <nav class="navbar navbar-expand-lg welcome">
+                <a class="navbar-brand" href="{% url 'home' %}">SpaBookings</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -55,23 +55,31 @@
             {% block content %}
             {% endblock %}
         </main>
-        <footer>
+        <footer class="container-fluid welcome">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 d-flex justify-content-center">
-                        <div>Opening Hours:</div>
-                        <ul>
-                            <li>Monday 9-5</li>
-                            <li>Tuesday</li>
-                            <li>Wednesday</li>
-                            <li>Thursday</li>
-                            <li>Friday</li>
-                            <li>Saturday</li>
-                            <li>Sunday</li>
-                        </ul>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div>
+                            <h5>Opening Hours:</h5>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="opening-hours">Monday-Thursday 9-5</li>
+                                <li class="opening-hours">Friday 9-7</li>
+                                <li class="opening-hours">Saturday-Sunday 10-7</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-center">
-                        About Us:
+                    <div class="col-12 d-flex justify-content-center">
+                        <h5>About Us:</h5>
+                        <p>
+                            Welcome to SpaBookings! We offer a variety of treatments for you to choose from. 
+                            These treatments range from 30 minute appointments to 1 hour appointments and include Massage, 
+                            Facials and Nail Treatments. Feel free to have a look at the treatment descriptions and if you 
+                            would like to book an appointment with us, all you need to do is Sign Up or Log In to do this. 
+                            We aim to accommodate times and days that suit you, so when you fill in the treatment request 
+                            form, we will cal you to confirm the time and appointment that suits your schedule.
+                        </p>
                     </div>
                     <div class="col d-flex justify-content-center">
                         <p>Website by Marina</p>
@@ -79,13 +87,13 @@
                 </div>
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
-                        <a href="https://www.facebook.com/">
+                        <a href="https://www.facebook.com/" target="_blank">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/">
+                        <a href="https://www.instagram.com/" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://www.pinterest.ie/">
+                        <a href="https://www.pinterest.ie/" target="_blank">
                             <i class="fa-brands fa-pinterest"></i>
                         </a>
                     </div>

@@ -8,7 +8,7 @@
             <h1 class="treatment-title">{{ treatment.title }}</h1>
         </div>
         <div class="col">
-            {% if "placeholder" in post.featured_image.url %}
+            {% if "placeholder" in treatment.featured_image.url %}
             <img src="https://www.pexels.com/photo/selective-focus-photography-of-candles-1123256/" alt="Spa Treatment Image" width="50%">
             {% else %}
             <img src=" {{ treatment.featured_image.url }}" width="50%">
