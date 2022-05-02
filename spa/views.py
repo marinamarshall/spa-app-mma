@@ -45,29 +45,27 @@ class BookingView(FormView):
         return super().form_valid(form)
     # def form_invalid(self, form):
     #     form.instance.client = self.request.user
-    #     render(
+    #     return render(
     #         request,
     #         'book_treatment.html',
     #         {
-                # booking_form = BookingForm
+        # "booking_form": BookingForm()
     #         },)
 
 
 # Your Treatments - View List
 class BookingList(ListView):
     """ BookingList """
-    template_name = 'view_bookings.html'
-    queryset = Booking.objects.filter(status=1)
-    model = Booking
-
-    # treatment = get_object_or_404(queryset)
-
+    # template_name = 'view_bookings.html'
+    # model = Booking
     def get(self, request, *args, **kwargs):
+        queryset = Booking.objects.filter(status=1)
+        treatment = get_object_or_404(queryset)
         return render(
             request,
             'view_bookings.html',
             {
-                # "treatment": treatment,
+                "treatment": treatment
                 # "booking_form": BookingForm(),
                 # "booked": True
             },
