@@ -4,19 +4,11 @@
     <div class="col-md-6 card mb-4  mt-3 offset-3">
         <div class="card-body">
             {% if user.is_authenticated %}
+            <h3>Book an Appointment</h3>
             <form action="{% url 'booking_view' %}" method="POST" style="margin-top: 1.3em;">
                 {% csrf_token %}
                 {{ form.as_p }}
-                
-                <h3>Book an Appointment</h3>
                 <button type="submit" class="btn btn-signup">Click To Make A Booking Request</button>
-                <!-- possibility of options of times so that user can select a time that is available-->
-                <!-- <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select> -->
             </form>
             {% else %}
             <h3>

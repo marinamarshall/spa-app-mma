@@ -6,6 +6,7 @@ from .models import Treatment, Booking
 from .forms import BookingForm
 
 
+# Displays the Treatments on the home page - index.html
 class TreatmentList(generic.ListView):
     """ TreatmentList """
     model = Treatment
@@ -13,6 +14,7 @@ class TreatmentList(generic.ListView):
     template_name = 'index.html'
 
 
+# Displays the Treatment Detail after clicking the Treatment Details button
 class TreatmentDetail(View):
     """ TreatmentDetail """
     def get(self, request, slug, *args, **kwargs):
@@ -30,7 +32,7 @@ class TreatmentDetail(View):
             },
         )
 
-
+# Displays the Booking Form to Book a Treatment
 class BookingView(FormView):
     """ BookingView """
     template_name = 'book_treatment.html'
@@ -41,16 +43,21 @@ class BookingView(FormView):
         form.instance.client = self.request.user
         form.save()
         return super().form_valid(form)
-    # if form.is_valid return render(request, 'view_bookings.html')
-    # else booking_form = BookingForm()
+    # def form_invalid(self, form):
+    #     form.instance.client = self.request.user
+    #     render(
+    #         request,
+    #         'book_treatment.html',
+    #         {
+                # booking_form = BookingForm
+    #         },)
+
 
 # Your Treatments - View List
-
-
 class BookingList(ListView):
     """ BookingList """
     template_name = 'view_bookings.html'
-    queryset = Booking.objects.all()
+    queryset = Booking.objects.filter(status=1)
     model = Booking
 
     # treatment = get_object_or_404(queryset)
