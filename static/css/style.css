@@ -101,3 +101,15 @@ li {
     font-size: 100px;
     text-align: justify;
 }
+
+.booking-container {
+    height: 80vh;
+    width: 80vw;
+}
+
+.booking-info {
+    text-align: center;
+    padding: 1%;
+    margin-bottom: 1%;
+    border: 1px solid gray;
+}

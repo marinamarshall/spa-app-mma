@@ -20,12 +20,18 @@
 * As a site user I can log in so that I can make a booking
 * As a site user I can view different treatments so that I can plan what I want done
 
-<USER EXPERIENCE (UX) - 
-STRATEGY, 
-SCOPE, 
-STRUCTURE, 
-SKELETON - WIREFRAMES, 
-SURFACE - COLOURS, FONTS/TYPOGRAPHY>
+## USER EXPERIENCE (UX)
+### STRATEGY
+
+### SCOPE
+
+### STRUCTURE
+
+### SKELETON - WIREFRAMES 
+
+### SURFACE - COLOURS, FONTS/TYPOGRAPHY
+
+* The colours of the website keep the idea of calm in mind. There are no harsh colours and the differentiation between elements is not distracted.
 
 ## Technologies Used
 ### Languages

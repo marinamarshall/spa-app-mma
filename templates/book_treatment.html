@@ -5,6 +5,7 @@
         <div class="card-body">
             {% if user.is_authenticated %}
             <h3>Book an Appointment</h3>
+            <aside>Please input your date as MM/DD/YYYY</aside>
             <form action="{% url 'booking_view' %}" method="POST" style="margin-top: 1.3em;">
                 {% csrf_token %}
                 {{ form.as_p }}

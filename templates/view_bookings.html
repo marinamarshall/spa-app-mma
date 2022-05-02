@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
-{% block content %}}
-{{ treatment.treatment }}
-<p>We will contact you by phone to confirm your appointment once we recieve your request</p>
+{% block content %}
+<div class="container booking-container">
+    <div class="row">
+        <div class="col">
+            <h3>Your Treatments:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col booking-info">
+            {% if booking %}
+            {% for object in booking %}
+            <div>
+            <p>Your Treatment: {{ object.treatment }}
+            Is scheduled for {{ object.date_of_treatment }}
+            At: {{ object.time_of_treatment }}
+            </div>
+            <div>
+                <a href="#" class="btn">Edit Booking</a>
+                <a href="#" class="btn">Delete Booking</a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="booking-info">You have no confirmed bookings. We will contact you by phone to confirm your appointment once we recieve your request</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
 {% endblock %}

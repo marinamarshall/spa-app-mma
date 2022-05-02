@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 CATEGORIES = ((0, 'Facial'), (1, 'Hands and Feet'), (2, 'Massage'))
-STATUS = ((0, "Pending"), (1, "Booked"))
-
 
 # Treatment Model
 class Treatment(models.Model):
@@ -27,7 +25,6 @@ class Client(models.Model):
     last_name = models.CharField(max_length=100, unique=True)
     phone = models.CharField(max_length=10)
     email = models.EmailField()
-    # treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -40,7 +37,7 @@ class Booking(models.Model):
     treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
     date_of_treatment = models.DateField()
     time_of_treatment = models.TimeField()
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.client} {self.treatment}"
