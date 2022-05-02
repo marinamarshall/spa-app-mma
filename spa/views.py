@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from .models import Treatment, Booking
-from .forms import BookingForm
+from .forms import BookingForm, EditForm
 
 
 # Displays the Treatments on the home page - index.html
@@ -58,6 +58,38 @@ class BookingList(ListView):
         return render(
             request,
             'view_bookings.html',
+            {
+                "booking": queryset,
+                # "booked": True
+            },
+        )
+
+
+# To Edit a Booking
+class EditBookings(ListView):
+    """ EditBookings """
+    template_name = 'edit_bookings.html'
+    model = Booking
+    form_class = EditForm
+
+    def get(self, request, *args, **kwargs):
+        """ filter """
+        queryset = Booking.objects.filter(status=1)
+        return render(
+            request,
+            'edit_bookings.html',
+            {
+                "booking": queryset,
+                # "booked": True
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        """ filter """
+        queryset = Booking.objects.filter(status=1)
+        return render(
+            request,
+            'edit_bookings.html',
             {
                 "booking": queryset,
                 # "booked": True

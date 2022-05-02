@@ -16,7 +16,7 @@
             At: {{ object.time_of_treatment }}
             </div>
             <div>
-                <a href="#" class="btn">Edit Booking</a>
+                <a href="{% url 'edit_bookings' %}" class="btn">Edit Booking</a>
                 <a href="#" class="btn">Delete Booking</a>
             </div>
             {% endfor %}
