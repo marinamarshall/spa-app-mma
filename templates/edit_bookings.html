@@ -3,7 +3,6 @@
 <div class="container">
     <div class="col-md-6 card mb-4  mt-3 offset-3">
         <div class="card-body">
-            {% if user.is_authenticated %}
             <h3>Edit Appointment</h3>
             <aside>Please input your date as MM/DD/YYYY</aside>
             <form action="{% url 'edit_bookings' %}" method="POST" style="margin-top: 1.3em;">
@@ -11,12 +10,6 @@
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-signup">Click To Make An Edit Request</button>
             </form>
-            {% else %}
-            <h3>
-                <a href="{% url 'account_login' %}">Log in to edit your appointment</a> 
-            </h3>
-            {% endif %}
-
         </div>
     </div>
 </div>

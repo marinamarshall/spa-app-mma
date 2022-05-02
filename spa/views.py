@@ -66,25 +66,18 @@ class BookingList(ListView):
 
 
 # To Edit a Booking
-class EditBookings(View):
+class EditBookings(FormView):
     """ EditBookings """
     template_name = 'edit_bookings.html'
-    model = Booking
     form_class = EditForm
+    success_url = '/viewbookings'
 
-    def get(self, request, *args, **kwargs):
-        """ get """
-        queryset = Booking.objects.filter(status=1)
+    def form_valid(self, form):
+        """ form_valid """
+        form.instance.client = self.request.user
+        form.save()
+        return super().form_valid(form)
 
-        return render(
-            request,
-            'edit_bookings.html',
-            {
-                "booking": queryset,
-                "editing_form": EditForm(),
-                # "booked": True
-            },
-        )
 
     # def post(self, request, *args, **kwargs):
     #     """ filter """
