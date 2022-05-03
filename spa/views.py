@@ -5,7 +5,7 @@ from django.views.generic.edit import FormView
 from .models import Treatment, Booking
 from .forms import BookingForm, EditForm, DeleteForm
 
-
+# TREATMENT VIEWS
 # Displays the Treatments on the home page - index.html
 class TreatmentList(generic.ListView):
     """ TreatmentList """
@@ -32,6 +32,8 @@ class TreatmentDetail(View):
             },
         )
 
+
+# BOOKING VIEWS
 # Displays the Booking Form to Book a Treatment
 class BookingView(FormView):
     """ BookingView """
@@ -45,6 +47,7 @@ class BookingView(FormView):
         return super().form_valid(form)
 
 
+# CURRENT BOOKING VIEWS
 # Your Treatments - View List
 class BookingList(ListView):
     """ BookingList """
@@ -79,6 +82,7 @@ class EditBookings(FormView):
         return super().form_valid(form)
 
 
+# To Delete a Booking
 class DeleteBookings(FormView):
     """ EditBookings """
     template_name = 'edit_bookings.html'
