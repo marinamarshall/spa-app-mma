@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-from .models import Treatment, Booking
+from .models import Treatment, Booking, Client
 from .forms import BookingForm, EditForm, DeleteForm
 
 # TREATMENT VIEWS
@@ -52,17 +52,17 @@ class BookingView(FormView):
 class BookingList(ListView):
     """ BookingList """
     template_name = 'view_bookings.html'
-    queryset = Booking.objects.filter(status=1)
     model = Booking
 
     def get(self, request, *args, **kwargs):
         """ filter """
-        queryset = Booking.objects.filter(status=1)
+        queryset = Booking.objects.filter(client=self.request.user, status=1)
         return render(
             request,
             'view_bookings.html',
             {
                 "booking": queryset,
+                # "client": client
                 # "booked": True
             },
         )
