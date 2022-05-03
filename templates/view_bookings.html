@@ -17,7 +17,7 @@
             </div>
             <div>
                 <a href="{% url 'edit_bookings' %}" class="btn">Edit Booking</a>
-                <a href="#" class="btn">Delete Booking</a>
+                <a href="{% url 'edit_bookings' %}" class="btn">Delete Booking</a>
             </div>
             {% endfor %}
             {% else %}

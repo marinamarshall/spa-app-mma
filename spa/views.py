@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from .models import Treatment, Booking
-from .forms import BookingForm, EditForm
+from .forms import BookingForm, EditForm, DeleteForm
 
 
 # Displays the Treatments on the home page - index.html
@@ -79,14 +79,14 @@ class EditBookings(FormView):
         return super().form_valid(form)
 
 
-    # def post(self, request, *args, **kwargs):
-    #     """ filter """
-    #     queryset = Booking.objects.filter(status=1)
-    #     return render(
-    #         request,
-    #         'edit_bookings.html',
-    #         {
-    #             "booking": queryset,
-                # "booked": True
-        #     },
-        # )
+class DeleteBookings(FormView):
+    """ EditBookings """
+    template_name = 'edit_bookings.html'
+    form_class = DeleteForm
+    success_url = '/viewbookings'
+
+    def form_valid(self, form):
+        """ form_valid """
+        form.instance.client = self.request.user
+        form.save()
+        return super().form_valid(form)

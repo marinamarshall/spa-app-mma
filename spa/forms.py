@@ -16,3 +16,11 @@ class EditForm(forms.ModelForm):
         """ Meta """
         model = Booking
         fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
+
+
+class DeleteForm(forms.ModelForm):
+    """ EditForm """
+    class Meta:
+        """ Meta """
+        model = Booking
+        fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
