@@ -1,5 +1,5 @@
 from django import forms
-from .models import Booking
+from .models import Booking, Update
 
 
 class BookingForm(forms.ModelForm):
@@ -10,7 +10,7 @@ class BookingForm(forms.ModelForm):
         fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
 
 
-class EditForm(forms.Form):
+class EditForm(forms.ModelForm):
     """ EditForm """
-    name = forms.CharField(label='Your name')
-    message = forms.CharField(widget=forms.Textarea)
+    model = Update
+    fields = ('name', 'new_specification',)

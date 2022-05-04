@@ -72,10 +72,10 @@ class EditBookings(FormView):
     """ EditBookings """
     template_name = 'edit_bookings.html'
     form_class = EditForm
-    success_url = '/success'
+    success_url = '/viewbookings/'
 
     def form_valid(self, form):
         """ form_valid """
-        # form.instance.client = self.request.user
-        # form.save()
+        form.instance.client = self.request.user
+        form.save()
         return super().form_valid(form)

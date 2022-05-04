@@ -42,3 +42,10 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.client} {self.treatment}"
+
+
+# Update Model
+class Update(models.Model):
+    """ Update Model for EditForm """
+    name = models.CharField(max_length=200)
+    new_specification = models.TextField()
