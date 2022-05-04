@@ -5,6 +5,7 @@ from django.views.generic.edit import FormView
 from .models import Treatment, Booking
 from .forms import BookingForm, EditForm
 
+
 # TREATMENT VIEWS
 # Displays the Treatments on the home page - index.html
 class TreatmentList(generic.ListView):

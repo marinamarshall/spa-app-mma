@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 CATEGORIES = ((0, 'Facial'), (1, 'Hands and Feet'), (2, 'Massage'))
 
+
 # Treatment Model
 class Treatment(models.Model):
     """ TreatmentModel """

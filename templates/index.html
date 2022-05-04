@@ -7,11 +7,6 @@
         <div class="col-sm-12 col-lg-4">
             <div class="card">
                 <div class="card-body">
-                        {% if "placeholder" in treatment.featured_image.url %}
-                        <img src="https://www.pexels.com/photo/selective-focus-photography-of-candles-1123256/" alt="Spa Treatment Image" class="mx-auto d-none d-lg-block">
-                        {% else %}
-                        <img src=" {{ treatment.featured_image.url }}" class="mx-auto d-none d-lg-block">
-                        {% endif %}
                     <h3 class="card-title">{{ treatment.title }}</h3>
                     <a href="{% url 'treatment_detail' treatment.slug %}">Treatment Details</a>
                 </div>
