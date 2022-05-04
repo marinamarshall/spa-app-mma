@@ -63,8 +63,6 @@ class BookingList(ListView):
             'view_bookings.html',
             {
                 "booking": queryset,
-                # "client": client
-                # "booked": True
             },
         )
 
@@ -74,10 +72,10 @@ class EditBookings(FormView):
     """ EditBookings """
     template_name = 'edit_bookings.html'
     form_class = EditForm
-    success_url = '/viewbookings'
+    success_url = '/success'
 
     def form_valid(self, form):
         """ form_valid """
-        form.instance.client = self.request.user
-        form.save()
+        # form.instance.client = self.request.user
+        # form.save()
         return super().form_valid(form)

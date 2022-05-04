@@ -12,9 +12,5 @@ class BookingForm(forms.ModelForm):
 
 class EditForm(forms.Form):
     """ EditForm """
-    class Meta:
-        """ Meta """
-        # model = Booking
-        name = forms.CharField(label='Your name')
-        comment = forms.Textarea()
-        # fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
+    name = forms.CharField(label='Your name')
+    message = forms.CharField(widget=forms.Textarea)

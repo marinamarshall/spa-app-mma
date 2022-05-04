@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-# from django.urls import reverse
 
 CATEGORIES = ((0, 'Facial'), (1, 'Hands and Feet'), (2, 'Massage'))
 
