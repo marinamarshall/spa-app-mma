@@ -10,17 +10,11 @@ class BookingForm(forms.ModelForm):
         fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
 
 
-class EditForm(forms.ModelForm):
+class EditForm(forms.Form):
     """ EditForm """
     class Meta:
         """ Meta """
-        model = Booking
-        fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
-
-
-class DeleteForm(forms.ModelForm):
-    """ EditForm """
-    class Meta:
-        """ Meta """
-        model = Booking
-        fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)
+        # model = Booking
+        name = forms.CharField(label='Your name')
+        comment = forms.Textarea()
+        # fields = ('treatment', 'date_of_treatment', 'time_of_treatment',)

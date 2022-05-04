@@ -11,13 +11,14 @@
             {% if booking %}
             {% for object in booking %}
             <div>
-            <p>Your Treatment: {{ object.treatment }}
-            Is scheduled for {{ object.date_of_treatment }}
-            At: {{ object.time_of_treatment }}
+                <p>Your Treatment: {{ object.treatment }}
+                    Is scheduled for {{ object.date_of_treatment }}
+                    At: {{ object.time_of_treatment }}
+                </p>
             </div>
             <div>
                 <a href="{% url 'edit_bookings' %}" class="btn">Edit Booking</a>
-                <a href="{% url 'edit_bookings' %}" class="btn">Delete Booking</a>
+                <!-- id=object.id -->
             </div>
             {% endfor %}
             {% else %}

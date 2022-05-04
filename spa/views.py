@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-from .models import Treatment, Booking, Client
-from .forms import BookingForm, EditForm, DeleteForm
+from .models import Treatment, Booking
+from .forms import BookingForm, EditForm
 
 # TREATMENT VIEWS
 # Displays the Treatments on the home page - index.html
@@ -73,20 +73,6 @@ class EditBookings(FormView):
     """ EditBookings """
     template_name = 'edit_bookings.html'
     form_class = EditForm
-    success_url = '/viewbookings'
-
-    def form_valid(self, form):
-        """ form_valid """
-        form.instance.client = self.request.user
-        form.save()
-        return super().form_valid(form)
-
-
-# To Delete a Booking
-class DeleteBookings(FormView):
-    """ EditBookings """
-    template_name = 'edit_bookings.html'
-    form_class = DeleteForm
     success_url = '/viewbookings'
 
     def form_valid(self, form):

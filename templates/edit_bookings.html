@@ -8,8 +8,7 @@
             <form action="{% url 'edit_bookings' %}" method="POST" style="margin-top: 1.3em;">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-signup">Click To Make An Edit Request</button>
-                <button type="submit" class="btn btn-signup">Click To Make An Delete Request</button>
+                <button type="submit" class="btn btn-signup">Click To Change Your Appointment</button>
             </form>
         </div>
     </div>

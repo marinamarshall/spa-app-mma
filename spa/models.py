@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+# from django.urls import reverse
 
 CATEGORIES = ((0, 'Facial'), (1, 'Hands and Feet'), (2, 'Massage'))
 
@@ -21,8 +22,8 @@ class Treatment(models.Model):
 # Client Model
 class Client(models.Model):
     """ ClientModel """
-    first_name = models.CharField(max_length=100, unique=True)
-    last_name = models.CharField(max_length=100, unique=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10)
     email = models.EmailField()
 
