@@ -19,6 +19,9 @@
             <div>
                 <a href="{% url 'edit_bookings' %}" class="btn">Edit Booking</a>
             </div>
+            <div>
+                <p>Any booking updates won't be displayed until the Admin confirms this with you</p>
+            </div>
             {% endfor %}
             {% else %}
             <p class="booking-info">You have no confirmed bookings. We will contact you by phone to confirm your appointment once we recieve your request</p>

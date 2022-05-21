@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.list import ListView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView
+from django.views.generic.detail import DetailView
 from .models import Treatment, Booking
 from .forms import BookingForm, EditForm
 
@@ -36,24 +37,26 @@ class TreatmentDetail(View):
 
 # BOOKING VIEWS
 # Displays the Booking Form to Book a Treatment
-class BookingView(FormView):
+class BookingView(CreateView):
     """ BookingView """
+    model = Booking
     template_name = 'book_treatment.html'
-    form_class = BookingForm
+    fields = ('client', 'treatment', 'date_of_treatment', 'time_of_treatment')
+    # form_class = BookingForm
     success_url = '/viewbookings/'
 
-    def form_valid(self, form):
-        form.instance.client = self.request.user
-        form.save()
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.instance.client = self.request.user
+    #     form.save()
+    #     return super().form_valid(form)
 
 
 # CURRENT BOOKING VIEWS
 # Your Treatments - View List
-class BookingList(ListView):
+class BookingList(DetailView):
     """ BookingList """
-    template_name = 'view_bookings.html'
     model = Booking
+    template_name = 'view_bookings.html'
 
     def get(self, request, *args, **kwargs):
         """ filter """

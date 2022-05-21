@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Treatment, Client, Booking
+from .models import Treatment, Client, Booking, Update
 
 # Treatment
 @admin.register(Treatment)
@@ -31,3 +31,12 @@ class BookingAdmin(admin.ModelAdmin):
 
     def approve_bookings(self, request, queryset):
         queryset.update(status=1)
+
+
+# Update Booking Request
+@admin.register(Update)
+class UpdateAdmin(admin.ModelAdmin):
+    """ UpdateAdmin """
+    list_filter = ('name', 'new_specification')
+    list_display = ('name', 'new_specification')
+    search_fields = ['name', 'new_specification']
